@@ -2,6 +2,7 @@
 #define _MAIN_H_
 
 #define PERIOD 1e-2
+#define REPETITIONS 21
 
 #include <inttypes.h>
 
