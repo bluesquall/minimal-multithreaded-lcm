@@ -1,0 +1,8 @@
+package minmt;
+
+struct example_t {
+  int64_t utime;
+  double position[2];
+  minmt.colors_t color;
+  boolean enabled;
+}
