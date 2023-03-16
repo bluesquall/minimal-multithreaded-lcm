@@ -8,4 +8,18 @@ project(minimal-multithreaded-lcm
 configure_file(src/config.h.in src/config.h)
 include_directories(${PROJECT_BINARY_BIN})
 
-add_executable(min-mt-lcm src/main.c)
+find_package(lcm REQUIRED)
+include(${LCM_USE_FILE})
+
+find_package(PythonInterp)
+find_package(Java)
+
+if(JAVA_FOUND)
+  include(UseJava)
+endif()
+if(PYTHONINTERP_FOUND)
+  include(UsePython)
+endif()
+
+add_subdirectory(lcmtypes)
+add_subdirectory(src)
