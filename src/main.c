@@ -17,25 +17,31 @@ utime(void)
 }
 
 static void*
-greeter(void* data){
-  pthread_t id = *(pthread_t *)data;
+follow (void* data){
+  int n = *(int *)data;
   int64_t t = 0;
-  for (int i=0; i<REPETITIONS; i++){
+  for (int i=0; i<REPETITIONS; i++) {
       t = utime();
-      printf("Aloha! at %" PRId64 " from thread %p in %s v%s\n", t, id, PROJECT_NAME, PROJECT_VERSION);
+      printf("Aloha! at %" PRId64 " from thread %d in %s v%s\n", t, n, PROJECT_NAME, PROJECT_VERSION);
       sleep(PERIOD);
   }
   return NULL; // TODO Is this really necessary?
 }
 
 int main(int argc, char **argv) {
-  pthread_t greeter_thread;
-  int greeter_thread_create_rc = pthread_create(&greeter_thread, NULL, greeter, (void *)&greeter_thread);
-  if(greeter_thread_create_rc != 0) {
-    perror("pthread_create");
+  int _rc = 0;
+  pthread_t follower[N_FOLLOWERS];
+
+  for (int i=0; i<N_FOLLOWERS; i++) {
+    _rc = pthread_create(&follower[i], NULL, follow, (void *)&i);
+    if (_rc != 0) {
+        perror("pthread_create");
+    }
   }
 
-  pthread_join(greeter_thread, NULL);
+  for (int i=0; i<N_FOLLOWERS; i++) {
+    pthread_join(follower[i], NULL);
+  }
 
   exit(EXIT_SUCCESS);
 }

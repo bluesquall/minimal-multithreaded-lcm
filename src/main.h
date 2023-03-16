@@ -2,7 +2,8 @@
 #define _MAIN_H_
 
 #define PERIOD 1e-2
-#define REPETITIONS 21
+#define REPETITIONS 3
+#define N_FOLLOWERS 7 // same as # colors in ROYGBIV
 
 #include <inttypes.h>
 
