@@ -5,8 +5,8 @@ project(minimal-multithreaded-lcm
   HOMEPAGE_URL "https://github.com/bluesquall/minimal-multithreaded-lcm"
   LANGUAGES C)
 
-configure_file(src/config.h.in src/config.h)
-include_directories(${PROJECT_BINARY_BIN})
+configure_file(config.h.in config.h)
+include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 find_package(lcm REQUIRED)
 include(${LCM_USE_FILE})
@@ -16,9 +16,6 @@ find_package(Java)
 
 if(JAVA_FOUND)
   include(UseJava)
-endif()
-if(PYTHONINTERP_FOUND)
-  include(UsePython)
 endif()
 
 add_subdirectory(lcmtypes)

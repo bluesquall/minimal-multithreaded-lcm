@@ -1,3 +1,5 @@
+include(GenerateExportHeader)
+
 if(JAVA_FOUND)
   set(java_args JAVA_SOURCES java_sources)
 endif()
