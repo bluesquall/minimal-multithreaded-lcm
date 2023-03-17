@@ -14,7 +14,6 @@ lcm_wrap_types(
   ${python_args}
   ${java_args}
   minmt_example_t.lcm
-  minmt_colors_t.lcm
 )
 
 lcm_add_library(min_mt_lcmtypes C ${c_sources} ${c_install_headers})
