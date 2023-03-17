@@ -99,7 +99,7 @@ int main(int argc, char **argv) {
   attractor.enabled = 1;
   attractor.position[0] = 2.5;
   attractor.position[1] = -3.5;
-  // attractor.color = minmt_colors_t.INFRARED;
+  attractor.color = MINMT_EXAMPLE_T_INFRARED;
 
   int _rc = 0;
   pthread_t follower[N_FOLLOWERS];
