@@ -97,6 +97,9 @@ int main(int argc, char **argv) {
 
   minmt_example_t attractor = { 0 };
   attractor.enabled = 1;
+  attractor.position[0] = 2.5;
+  attractor.position[1] = -3.5;
+  // attractor.color = minmt_colors_t.INFRARED;
 
   int _rc = 0;
   pthread_t follower[N_FOLLOWERS];
@@ -109,8 +112,8 @@ int main(int argc, char **argv) {
   }
 
   for (int i=0; i<REPETITIONS; i++) {
-    minmt_example_t_publish(lcm, ATTRACTOR_CHANNEL, &attractor);
     usleep(PERIOD);
+    minmt_example_t_publish(lcm, ATTRACTOR_CHANNEL, &attractor);
   }
 
   for (int i=0; i<N_FOLLOWERS; i++) {
