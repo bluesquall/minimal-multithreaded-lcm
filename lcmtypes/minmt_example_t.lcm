@@ -6,5 +6,13 @@ struct example_t {
   int8_t color;
   boolean enabled;
 
-  const int8_t INFRARED=0, RED=1, ORANGE=2, YELLOW=3, GREEN=4, BLUE=5, INDIGO=6, VIOLET=7, ULTRAVIOLET=8;
+  const int8_t COLOR_INFRARED=0,
+    COLOR_RED=1,
+    COLOR_ORANGE=2,
+    COLOR_YELLOW=3,
+    COLOR_GREEN=4,
+    COLOR_BLUE=5,
+    COLOR_INDIGO=6,
+    COLOR_VIOLET=7,
+    COLOR_ULTRAVIOLET=8;
 }

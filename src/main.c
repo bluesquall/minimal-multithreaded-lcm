@@ -64,6 +64,7 @@ follower_loop (void* data){
   }
 
   minmt_example_t self = { 0 };
+  self.color = n;
 
   follower.lcm = lcm;
   follower.self = &self;
@@ -99,7 +100,7 @@ int main(int argc, char **argv) {
   attractor.enabled = 1;
   attractor.position[0] = 2.5;
   attractor.position[1] = -3.5;
-  attractor.color = MINMT_EXAMPLE_T_INFRARED;
+  attractor.color = MINMT_EXAMPLE_T_COLOR_INFRARED;
 
   int _rc = 0;
   pthread_t follower[N_FOLLOWERS];
