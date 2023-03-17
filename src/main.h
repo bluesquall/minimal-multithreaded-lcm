@@ -5,8 +5,8 @@
 #define LCM_QUEUE_CAPACITY 3
 #define LCM_HANDLE_TIMEOUT 1000 // milliseconds
 
-#define PERIOD 10000 // microseconds (for usleep in main thread)
-#define REPETITIONS 1000
+#define PERIOD 100000 // microseconds (for usleep in main thread)
+#define REPETITIONS 100
 
 #define N_FOLLOWERS 7 // 7 same as # colors in ROYGBIV
 
