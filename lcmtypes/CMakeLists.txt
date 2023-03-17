@@ -32,7 +32,7 @@ if(JAVA_FOUND)
 endif()
 
 lcm_install_headers(DESTINATION include
-  ${CMAKE_CURRENT_BINARY_DIR}/my_lcmtypes_export.h
+  ${CMAKE_CURRENT_BINARY_DIR}/min_mt_lcmtypes_export.h
   ${c_install_headers}
   ${cpp_install_headers}
 )
