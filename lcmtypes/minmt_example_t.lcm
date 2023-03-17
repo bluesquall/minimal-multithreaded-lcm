@@ -3,6 +3,8 @@ package minmt;
 struct example_t {
   int64_t utime;
   double position[2];
-  minmt.colors_t color;
+  int8_t color;
   boolean enabled;
+
+  const int8_t INFRARED=0, RED=1, ORANGE=2, YELLOW=3, GREEN=4, BLUE=5, INDIGO=6, VIOLET=7, ULTRAVIOLET=8;
 }
